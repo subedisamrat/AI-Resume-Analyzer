@@ -8,8 +8,11 @@ import { useEffect } from "react";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "ResumAI" },
-    { name: "description", content: "Smart assistant for your dream job! " },
+    { title: "Smart Resume" },
+    {
+      name: "description",
+      content: "Smart AI assistant to crack your dream job ! ",
+    },
   ];
 }
 
