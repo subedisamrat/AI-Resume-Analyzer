@@ -22,8 +22,8 @@ const Category = ({ title, score }: { title: string; score: number }) => {
     </div>
   );
 };
-
 const Summary = ({ feedback }: { feedback: Feedback }) => {
+  console.log(feedback, "feedback");
   return (
     <div className="bg-white rounded-2xl shadow-empty w-full">
       <div className="flex fle-row items-center p-4 gap-8">
@@ -36,10 +36,10 @@ const Summary = ({ feedback }: { feedback: Feedback }) => {
         </div>
       </div>
 
-      <Category title="Tone & Style" score={feedback.toneAndStyle.score} />
-      <Category title="Content" score={feedback.content.score} />
-      <Category title="Structure" score={feedback.structure.score} />
-      <Category title="Skills" score={feedback.skills.score} />
+      <Category title="Tone & Style" score={feedback?.toneAndStyle?.score} />
+      <Category title="Content" score={feedback?.content?.score} />
+      <Category title="Structure" score={feedback?.structure?.score} />
+      <Category title="Skills" score={feedback?.skills?.score} />
     </div>
   );
 };

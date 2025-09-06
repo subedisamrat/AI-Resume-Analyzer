@@ -62,7 +62,7 @@ const CategoryContent = ({
   return (
     <div className="flex flex-col gap-4 items-center w-full">
       <div className="bg-gray-50 w-full rounded-lg px-5 py-4 grid grid-cols-2 gap-4">
-        {tips.map((tip, index) => (
+        {tips?.map((tip, index) => (
           <div className="flex flex-row gap-2 items-center" key={index}>
             <img
               src={
@@ -76,7 +76,7 @@ const CategoryContent = ({
         ))}
       </div>
       <div className="flex flex-col gap-4 w-full">
-        {tips.map((tip, index) => (
+        {tips?.map((tip, index) => (
           <div
             key={index + tip.tip}
             className={cn(
@@ -114,44 +114,44 @@ const Details = ({ feedback }: { feedback: Feedback }) => {
           <AccordionHeader itemId="tone-style">
             <CategoryHeader
               title="Tone & Style"
-              categoryScore={feedback.toneAndStyle.score}
+              categoryScore={feedback?.toneAndStyle?.score || 0}
             />
           </AccordionHeader>
           <AccordionContent itemId="tone-style">
-            <CategoryContent tips={feedback.toneAndStyle.tips} />
+            <CategoryContent tips={feedback?.toneAndStyle?.tips || []} />
           </AccordionContent>
         </AccordionItem>
         <AccordionItem id="content">
           <AccordionHeader itemId="content">
             <CategoryHeader
               title="Content"
-              categoryScore={feedback.content.score}
+              categoryScore={feedback?.content?.score || 0}
             />
           </AccordionHeader>
           <AccordionContent itemId="content">
-            <CategoryContent tips={feedback.content.tips} />
+            <CategoryContent tips={feedback?.content?.tips || []} />
           </AccordionContent>
         </AccordionItem>
         <AccordionItem id="structure">
           <AccordionHeader itemId="structure">
             <CategoryHeader
               title="Structure"
-              categoryScore={feedback.structure.score}
+              categoryScore={feedback?.structure?.score || 0}
             />
           </AccordionHeader>
           <AccordionContent itemId="structure">
-            <CategoryContent tips={feedback.structure.tips} />
+            <CategoryContent tips={feedback?.structure?.tips || []} />
           </AccordionContent>
         </AccordionItem>
         <AccordionItem id="skills">
           <AccordionHeader itemId="skills">
             <CategoryHeader
               title="Skills"
-              categoryScore={feedback.skills.score}
+              categoryScore={feedback?.skills?.score || 0}
             />
           </AccordionHeader>
           <AccordionContent itemId="skills">
-            <CategoryContent tips={feedback.skills.tips} />
+            <CategoryContent tips={feedback?.skills?.tips || []} />
           </AccordionContent>
         </AccordionItem>
       </Accordion>
